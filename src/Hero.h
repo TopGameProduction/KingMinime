@@ -31,7 +31,7 @@ public:
     const int& getY(){return y;}
     const int& getMs(){ return ms;}
     Weapon* getWeapon(){ return weapon;}
-    Inventory* getInventar(){ return inventory;}
+    Inventory* getInventory(){ return inventory;}
 
     void initialize();
 
