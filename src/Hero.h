@@ -31,11 +31,11 @@ public:
     const int& getY(){return y;}
     const int& getMs(){ return ms;}
     Weapon* getWeapon(){ return weapon;}
-    Inventory* getInventory(){ return inventory;}
+    Inventory* getInventar(){ return inventory;}
 
     void initialize();
 
-    ~Hero();
+    ~Hero(){};
 };
 
 

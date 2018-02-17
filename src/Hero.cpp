@@ -12,7 +12,5 @@ void Hero::initialize() {
     this->x = 0;
     this->y = 0;
     this->ms = 20;
-    this->weapon = nullptr;
-    this->inventory = nullptr;
 }
 

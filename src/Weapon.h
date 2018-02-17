@@ -9,17 +9,22 @@
 
 class Weapon {
 private:
-    const std::string name;
+    std::string name;
     int dmg;
     int as;
     int dst;
 public:
-    virtual const std::string& getName();
-    virtual const int& getDmg();
-    virtual const int& getAs();
-    virtual const int& getDst();
+    virtual const std::string &getName() const { return name; }
 
-    virtual void initialize();
+    virtual const int &getDmg() const { return dmg; }
+
+    virtual const int &getAs() const { return as; }
+
+    virtual const int &getDst() const { return dst; }
+
+    virtual void initialize(std::string name, int dmg, int as, int dst);
+
+    ~Weapon() {};
 };
 
 
