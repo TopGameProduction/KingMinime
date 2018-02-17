@@ -8,7 +8,8 @@
 #include "Weapon.h"
 
 class Sword : public Weapon{
-   void initialize();
+public:
+    Sword() : Weapon("Sword", 1, 1, 1) {}
 };
 
 
