@@ -6,7 +6,7 @@
 #define KINGMINIME_INVENTAR_H
 
 
-class Inventar {
+class Inventory {
 
 };
 
