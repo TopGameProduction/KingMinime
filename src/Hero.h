@@ -22,16 +22,16 @@ private:
     Weapon *weapon;
     Inventory *inventory;
 public:
-    const std::string& getName() const{return name;}
-    const int& getLvl() const{return lvl;}
-    const int& getXp() const{return xp;}
-    const int& getHp() const{return hp;}
-    const int& getMp() const{return mp;}
-    const int& getX() const{ return x;}
-    const int& getY() const{return y;}
-    const int& getMs() const{ return ms;}
-    Weapon* getWeapon() const{ return weapon;}
-    Inventory* getInventar() const{ return inventory;}
+    const std::string& getName() const;
+    const int& getLvl() const;
+    const int& getXp() const;
+    const int& getHp() const;
+    const int& getMp() const;
+    const int& getX() const;
+    const int& getY() const;
+    const int& getMs() const;
+    Weapon* getWeapon() const;
+    Inventory* getInventory() const;
 
     void initialize();
 

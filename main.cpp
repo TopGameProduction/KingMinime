@@ -1,4 +1,5 @@
 #include <iostream>
+#include "src/Weapon.h"
 
 int main()
 {
