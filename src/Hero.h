@@ -5,7 +5,7 @@
 #ifndef KINGMINIME_HERO_H
 #define KINGMINIME_HERO_H
 #include <string>
-#include "Weapon.h"
+#include "weapon/Weapon.h"
 #include "Inventory.h"
 
 
