@@ -14,17 +14,17 @@ private:
     int as;
     int dst;
 public:
-    virtual const std::string &getName() const { return name; }
+    Weapon(std::string name, int dmg, int as, int dst) : (name, dmg, as, dst) {}
 
-    virtual const int &getDmg() const { return dmg; }
+    virtual const std::string &getName() const;
 
-    virtual const int &getAs() const { return as; }
+    virtual const int &getDmg() const;
 
-    virtual const int &getDst() const { return dst; }
+    virtual const int &getAs() const;
 
-    virtual void initialize(std::string name, int dmg, int as, int dst);
+    virtual const int &getDst() const;
 
-    ~Weapon() {};
+    virtual ~Weapon() {};
 };
 
 
