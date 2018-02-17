@@ -8,7 +8,7 @@
 
 #include "Weapon.h"
 
-class Axe {
+class Axe : public Weapon {
 public:
     Axe() : Weapon("Axe", 1, 1, 1) {}
 };

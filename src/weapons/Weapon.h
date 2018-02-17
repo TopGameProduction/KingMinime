@@ -14,7 +14,7 @@ private:
     int as;
     int dst;
 public:
-    Weapon(std::string name, int dmg, int as, int dst) : (name, dmg, as, dst) {}
+    Weapon(std::string name, int dmg, int as, int dst) : name(this->name), dmg(this->dmg), as(this->as), dst(this->dst){}
 
     virtual const std::string &getName() const;
 
