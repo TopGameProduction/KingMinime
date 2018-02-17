@@ -19,8 +19,8 @@ private:
     int x;
     int y;
     int ms;
-    Weapon weapon;
-    Inventory inventory;
+    Weapon *weapon;
+    Inventory *inventory;
 public:
     const std::string& getName(){return name;}
     const int& getLvl(){return lvl;}
@@ -30,8 +30,8 @@ public:
     const int& getX(){ return x;}
     const int& getY(){return y;}
     const int& getMs(){ return ms;}
-    Weapon& getWeapon(){ return weapon;}
-    Inventory& getInventar(){ return inventory;}
+    Weapon* getWeapon(){ return weapon;}
+    Inventory* getInventar(){ return inventory;}
 
     void initialize();
 
