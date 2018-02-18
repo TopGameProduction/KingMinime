@@ -7,7 +7,7 @@
 Item::Item(std::string name, int buyPrice) {
       this->name=name;
       this->buyPrice=buyPrice;
-      this->selPrice=buyPrice/2;
+      this->sellPrice=buyPrice/2;
 }
 
 Item::~Item() {}

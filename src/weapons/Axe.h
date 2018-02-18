@@ -10,7 +10,7 @@
 
 class Axe : public Weapon {
 public:
-    Axe() : Weapon("Axe", 1, 1, 1) {}
+    Axe() : Weapon("Axe",1, 1, 1, 1) {}
 };
 
 
