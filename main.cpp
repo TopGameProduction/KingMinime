@@ -1,8 +1,10 @@
 #include <iostream>
-#include "src/weapon/Weapon.h"
+#include "src/Hero.h"
+
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    Hero h;
+    std::cout << h.toString();
     return 0;
 }

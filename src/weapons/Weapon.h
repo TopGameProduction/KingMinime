@@ -10,11 +10,15 @@
 class Weapon {
 private:
     std::string name;
-    int dmg;
-    int as;
-    int dst;
+    int dmg{};
+    int as{};
+    int dst{};
 public:
-    Weapon(std::string name, int dmg, int as, int dst) : name(this->name), dmg(this->dmg), as(this->as), dst(this->dst){}
+    Weapon(std::string name, int dmg, int as, int dst);
+
+    virtual ~Weapon();
+
+    //Accessors
 
     virtual const std::string &getName() const;
 
@@ -24,7 +28,6 @@ public:
 
     virtual const int &getDst() const;
 
-    virtual ~Weapon() {};
 };
 
 
