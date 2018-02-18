@@ -6,10 +6,10 @@
 #define KINGMINIME_WEAPON_H
 
 #include <string>
+#include "../item/Item.h"
 
-class Weapon {
+class Weapon : public Item{
 private:
-    std::string name;
     int dmg;
     int as;
     int dst;
@@ -19,8 +19,6 @@ public:
     virtual ~Weapon();
 
     //Accessors
-
-    virtual const std::string &getName() const;
 
     virtual const int &getDmg() const;
 

@@ -3,9 +3,11 @@
 //
 
 #include "Weapon.h"
+#include <string>
 
-Weapon::Weapon(std::string name, int dmg, int as, int dst) {
-    this->name = name;
+
+Weapon::Weapon(int dmg, int as, int dst) : Item(std::string name, int buyPrice) {
+    this->dmg=dmg;
     this->as = as;
     this->dst = dst;
 }
@@ -13,8 +15,6 @@ Weapon::Weapon(std::string name, int dmg, int as, int dst) {
 Weapon::~Weapon() {}
 
 //Accessors
-
-const std::string &Weapon::getName() const { return this->name; }
 
 const int &Weapon::getDmg() const { return this->dmg; }
 
