@@ -6,8 +6,8 @@
 #include <string>
 
 
-Weapon::Weapon(int dmg, int as, int dst) : Item(std::string name, int buyPrice) {
-    this->dmg=dmg;
+Weapon::Weapon(std::string name, int buyPrice, int dmg, int as, int dst) : Item(name, buyPrice) {
+    this->dmg = dmg;
     this->as = as;
     this->dst = dst;
 }

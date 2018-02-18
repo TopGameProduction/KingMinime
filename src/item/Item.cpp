@@ -13,13 +13,13 @@ Item::Item(std::string name, int buyPrice) {
 Item::~Item() {}
 
 const std::string &Item::getName() const {
-    return <#initializer#>;
+    return this->name;
 }
 
 const int &Item::getBuyPrice() const {
-    return <#initializer#>;
+    return this->buyPrice;
 }
 
-const int &Item::getSelPrice() const {
-    return <#initializer#>;
+const int &Item::getSellPrice() const {
+    return this->sellPrice;
 }

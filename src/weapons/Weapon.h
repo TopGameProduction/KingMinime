@@ -14,7 +14,7 @@ private:
     int as;
     int dst;
 public:
-    Weapon(std::string name, int dmg, int as, int dst);
+    Weapon(std::string name, int buyPrice, int dmg, int as, int dst);
 
     virtual ~Weapon();
 
