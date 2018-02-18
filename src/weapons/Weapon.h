@@ -10,9 +10,9 @@
 class Weapon {
 private:
     std::string name;
-    int dmg{};
-    int as{};
-    int dst{};
+    int dmg;
+    int as;
+    int dst;
 public:
     Weapon(std::string name, int dmg, int as, int dst);
 
