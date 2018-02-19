@@ -3,3 +3,5 @@
 //
 
 #include "Spear.h"
+
+Spear::Spear()  : Weapon("Spear",50, 1, 1, 1) {}

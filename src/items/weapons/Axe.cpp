@@ -3,3 +3,6 @@
 //
 
 #include "Axe.h"
+
+Axe::Axe()  : Weapon("Axe",50, 1, 1, 1) {}
+

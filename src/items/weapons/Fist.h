@@ -9,7 +9,7 @@
 
 class Fist : public Weapon {
 public:
-    Fist() : Weapon("Fist",50, 1, 1, 1) {}
+    Fist();
 };
 
 

@@ -3,3 +3,5 @@
 //
 
 #include "Fist.h"
+
+Fist::Fist() : Weapon("Fist",50, 1, 1, 1){}

@@ -3,3 +3,5 @@
 //
 
 #include "Bow.h"
+
+Bow::Bow() : Weapon("Bow", 50, 1, 1, 1) {}

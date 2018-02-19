@@ -28,7 +28,6 @@ private:
     int ms;
     Weapon *weapon;
     Inventory *inventory;
-
 public:
     Hero();
 
