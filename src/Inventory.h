@@ -5,6 +5,7 @@
 #ifndef KINGMINIME_INVENTAR_H
 #define KINGMINIME_INVENTAR_H
 
+#include "items/Item.h"
 
 class Inventory {
 

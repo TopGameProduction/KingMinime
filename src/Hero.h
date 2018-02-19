@@ -5,10 +5,11 @@
 #ifndef KINGMINIME_HERO_H
 #define KINGMINIME_HERO_H
 
-#include <string>
-#include "weapons/Weapon.h"
+#include "items/weapons/Weapon.h"
+#include "items/consumables/Potion.h"
 #include "Inventory.h"
 
+class Potion;
 
 class Hero {
 private:
@@ -33,7 +34,7 @@ public:
 
     ~Hero();
 
-    //Accessors
+    //Getters & Setters
 
     const std::string &getName() const;
 
@@ -53,9 +54,13 @@ public:
 
     const int &getHp() const;
 
+    void setHp(const int& newHp );
+
     const int &getHpMax() const;
 
     const int &getMp() const;
+
+    void setMp(const int& newMp);
 
     const int &getMpMax() const;
 
@@ -67,8 +72,21 @@ public:
 
     //Methods
 
-    std::string toString();
+    /*
+    void addToInventory(Item * item);
 
+    void removeFromInventory(int slot);
+
+    void pick (Weapon * weapon);
+
+    void pick (int slot);
+
+    void drop (Weapon * weapon);
+     */
+
+    void use (Potion *  potion);
+
+    std::string toString();
 
 };
 

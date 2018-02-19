@@ -4,9 +4,7 @@
 
 #ifndef KINGMINIME_WEAPON_H
 #define KINGMINIME_WEAPON_H
-
-#include <string>
-#include "../item/Item.h"
+#include "../Item.h"
 
 class Weapon : public Item{
 private:

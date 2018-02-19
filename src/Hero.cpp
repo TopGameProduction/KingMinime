@@ -43,9 +43,26 @@ const int &Hero::getXpNext() const { return this->xpNext; }
 
 const int &Hero::getHp() const { return this->hp; }
 
+void Hero::setHp(const int &newHp) {
+    if (newHp <= this->hpMax && newHp >= 0) {
+        this->hp = newHp;
+    } else {
+        this->hp = hpMax;
+    }
+}
+
 const int &Hero::getHpMax() const { return this->hpMax; }
 
 const int &Hero::getMp() const { return this->mp; }
+
+void Hero::setMp(const int &newMp) {
+    if (newMp <= this->hpMax && newMp >= 0) {
+        this->mp = newMp;
+    } else {
+        this->mp = mpMax;
+    }
+}
+
 
 const int &Hero::getMpMax() const { return this->mpMax; }
 
@@ -56,6 +73,9 @@ Weapon *Hero::getWeapon() const { return this->weapon; }
 Inventory *Hero::getInventory() const { return this->inventory; }
 
 //Methods
+
+void Hero::use(Potion *potion) { potion->use(this); }
+
 
 std::string Hero::toString() {
     return "Name: " + this->name + "\n" +
@@ -68,6 +88,8 @@ std::string Hero::toString() {
            "Movement Speed: " + std::to_string(this->ms);
 
 }
+
+
 
 
 

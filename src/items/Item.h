@@ -4,8 +4,8 @@
 
 #ifndef KINGMINIME_ITEM_H
 #define KINGMINIME_ITEM_H
-#include <string>
 
+#include <string>
 
 class Item {
 private:
@@ -14,14 +14,15 @@ private:
     int sellPrice;
 public:
     Item(std::string name, int buyPrice);
+
     virtual ~Item();
 
     virtual const std::string &getName() const;
+
     virtual const int &getBuyPrice() const;
+
     virtual const int &getSellPrice() const;
 
 };
-
-
 
 #endif //KINGMINIME_ITEM_H
