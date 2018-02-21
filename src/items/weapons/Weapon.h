@@ -15,7 +15,15 @@ private:
 public:
     Weapon(std::string name, int buyPrice, int dmg, int as, int dst);
 
+    Weapon(const Weapon & weapon);
+
     virtual ~Weapon();
+
+    Weapon (Weapon &&weapon) noexcept;
+
+    Weapon &operator=(const Weapon &weapon);
+
+    Weapon &operator=(Weapon &weapon) noexcept;
 
     //Getters & Setters
     virtual const int &getDmg() const;
@@ -25,7 +33,7 @@ public:
     virtual const int &getDst() const;
 
     //Functions
-    virtual Item *clone() const = 0;
+    //virtual Item * clone() const = 0;
 
     std::string toString() const override;
 

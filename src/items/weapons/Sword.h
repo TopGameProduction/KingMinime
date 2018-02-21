@@ -11,7 +11,17 @@ class Sword : public Weapon{
 public:
     Sword();
 
-    Item* clone() const override;
+    ~Sword();
+
+    Sword(const Sword &sword );
+
+    Sword(Sword && sword) noexcept;
+
+    Sword &operator=(const Sword &sword);
+
+    Sword &operator=(Sword &&sword) noexcept;
+
+   // Sword* clone() const override;
 };
 
 

@@ -7,4 +7,23 @@
 
 Sword::Sword() : Weapon("Sword", 50, 1, 1, 1) {}
 
-Item *Sword::clone() const { return new Sword(*this); }
+Sword::~Sword():~Weapon(){
+
+}
+
+Sword::Sword(const Sword &sword):Weapon(sword) {
+}
+
+Sword::Sword(Sword &&sword) noexcept:Weapon(sword) {
+
+}
+
+Sword &Sword::operator=(const Sword &sword) {
+    Weapon::operator=(sword);
+}
+
+Sword &Sword::operator=(Sword &&sword) noexcept{
+    Weapon::operator=(sword);
+}
+
+//Item *Sword::clone() const { return new Sword(*this); }

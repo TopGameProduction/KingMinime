@@ -12,7 +12,17 @@ class Axe : public Weapon {
 public:
     Axe();
 
-    Item* clone() const override;
+    ~Axe();
+
+    Axe(const Axe &axe);
+
+    Axe(Axe &&axe) noexcept;
+
+    Axe &operator=(const Axe &axe);
+
+    Axe &operator=(Axe &&axe) noexcept;
+
+   //Item* clone() const override;
 };
 
 

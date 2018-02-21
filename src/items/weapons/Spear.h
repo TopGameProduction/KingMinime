@@ -12,7 +12,17 @@ class Spear : public Weapon {
 public:
     Spear();
 
-    Item* clone() const override;
+    ~Spear();
+
+    Spear(const Spear &spear);
+
+    Spear (Spear &&spear) noexcept;
+
+    Spear &operator=(const Spear &spear);
+
+    Spear &operator=(Spear &&spear) noexcept;
+
+    //Item* clone() const override;
 };
 
 
