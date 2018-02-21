@@ -11,6 +11,8 @@
 class Plate : public Armor{
 public:
     Plate();
+
+    Item* clone() const override;
 };
 
 

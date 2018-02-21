@@ -20,3 +20,11 @@ void MpPotion::use(Hero *hero) {
         charges--;
     }
 }
+
+Item *MpPotion::clone() const { return new MpPotion(*this); }
+
+std::string MpPotion::toString() const {
+    return Item::toString() +
+           "Charges: " + std::to_string(this->charges) + "\n" +
+           "Mana heal per charge: " + std::to_string(this->grantedMpPerCharge) + "\n";
+}

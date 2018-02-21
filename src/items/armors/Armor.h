@@ -14,8 +14,16 @@ private:
     int armPoint;
 public:
     Armor(const std::string &name, int buyPrice, int armPoint);
+
     virtual ~Armor();
+
+    //Getters & Setters
     const int &getArmPoint();
+
+    //Functions
+    virtual Item* clone() const = 0;
+
+    std::string toString() const override;
 };
 
 

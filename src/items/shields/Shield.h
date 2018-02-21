@@ -12,10 +12,14 @@ class Shield : public Item{
 private:
     int blockChance;
 public:
-    Shield(const std::string &name, int buyPrice, int blockChanse);
+    Shield(const std::string &name, int buyPrice, int blockChance);
     virtual ~Shield();
+
     const int &getBlockChance();
 
+    virtual Item* clone() const = 0;
+
+    virtual std::string toString();
 };
 
 

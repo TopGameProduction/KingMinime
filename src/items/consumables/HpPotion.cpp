@@ -21,4 +21,12 @@ void HpPotion::use(Hero *hero) {
     }
 }
 
+Item *HpPotion::clone() const { return new HpPotion(*this); }
+
+std::string HpPotion::toString() const {
+    return Item::toString() +
+           "Charges: " + std::to_string(this->charges) + "\n" +
+           "Health heal per charge: " + std::to_string(this->grantedHpPerCharge) + "\n";
+}
+
 

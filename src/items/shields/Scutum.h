@@ -11,6 +11,8 @@
 class Scutum : public Shield{
 public:
     Scutum();
+
+    Item * clone() const override;
 };
 
 

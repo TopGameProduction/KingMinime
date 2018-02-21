@@ -11,6 +11,7 @@
 class Buckler : public Shield {
 public:
     Buckler();
+    Item * clone() const override;
 };
 
 

@@ -11,7 +11,10 @@
 class Cuirass : public Armor{
 public:
     Cuirass();
+
+    Item* clone() const override;
 };
+
 
 
 #endif //KINGMINIME_CUIRASS_H

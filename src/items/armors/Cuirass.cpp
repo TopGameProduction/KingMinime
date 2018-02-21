@@ -4,6 +4,8 @@
 
 #include "Cuirass.h"
 
-Cuirass::Cuirass(): Armor("Cuirass", 1, 1) {
+Cuirass::Cuirass() : Armor("Cuirass", 1, 1) {
 
 }
+
+Item *Cuirass::clone() const { return new Cuirass(*this); }

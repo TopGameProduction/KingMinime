@@ -7,3 +7,5 @@
 Buckler::Buckler() : Shield("Buckler",1,1){
 
 }
+
+Item *Buckler::clone() const {return new Buckler(*this);}

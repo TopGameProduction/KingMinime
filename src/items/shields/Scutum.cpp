@@ -7,3 +7,5 @@
 Scutum::Scutum() : Shield("Scutum", 1, 1){
 
 }
+
+Item *Scutum::clone() const {return new Scutum(*this);}

@@ -4,6 +4,8 @@
 
 #include "Rondache.h"
 
-Rondache::Rondache() : Shield("Rondache", 1,1) {
+Rondache::Rondache() : Shield("Rondache", 1, 1) {
 
 }
+
+Item *Rondache::clone() const { return new Rondache(*this); }

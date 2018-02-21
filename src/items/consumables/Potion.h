@@ -15,6 +15,11 @@ public:
     Potion(std::string name, int buyPrice);
 
     virtual void use(Hero *hero) = 0;
+
+    virtual Item *clone() const = 0;
+
+    virtual std::string toString() const = 0;
+
 };
 
 #endif //KINGMINIME_POTION_H

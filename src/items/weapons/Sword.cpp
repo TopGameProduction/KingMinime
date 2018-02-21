@@ -5,4 +5,6 @@
 #include "Weapon.h"
 #include "Sword.h"
 
-Sword::Sword() : Weapon("Sword",50, 1, 1, 1) {}
+Sword::Sword() : Weapon("Sword", 50, 1, 1, 1) {}
+
+Item *Sword::clone() const { return new Sword(*this); }

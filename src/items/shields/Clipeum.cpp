@@ -4,5 +4,7 @@
 
 #include "Clipeum.h"
 
-Clipeum::Clipeum() : Shield("Clipeum", 1, 1){}
+Clipeum::Clipeum() : Shield("Clipeum", 1, 1) {}
+
+Item *Clipeum::clone() const { return new Clipeum(*this); }
 

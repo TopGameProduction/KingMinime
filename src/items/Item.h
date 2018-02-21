@@ -17,11 +17,17 @@ public:
 
     virtual ~Item();
 
+    //Getters & Setters
     virtual const std::string &getName() const;
 
     virtual const int &getBuyPrice() const;
 
     virtual const int &getSellPrice() const;
+
+    //Functions
+    virtual Item* clone() const = 0;
+
+    virtual std::string toString() const;
 
 };
 

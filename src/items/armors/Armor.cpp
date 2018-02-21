@@ -5,11 +5,17 @@
 #include "Armor.h"
 
 Armor::Armor(const std::string &name, int buyPrice, int armPoint) : Item(name, buyPrice) {
-    this->armPoint=armPoint;
+    this->armPoint = armPoint;
 }
 
 Armor::~Armor() {}
 
-const int &Armor::getArmPoint() {
-    return this->armPoint;
+// Getters & Setters
+const int &Armor::getArmPoint() { return this->armPoint; }
+
+//Functions
+std::string Armor::toString() const {
+    return Item::toString() +
+           "Armor point: " + std::to_string(this->armPoint) + "\n";
 }
+

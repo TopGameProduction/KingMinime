@@ -8,9 +8,11 @@
 
 #include "Shield.h"
 
-class Clipeum : public Shield{
+class Clipeum : public Shield {
 public:
     Clipeum();
+
+    Item *clone() const override;
 };
 
 

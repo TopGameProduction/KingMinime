@@ -11,6 +11,8 @@
 class Bow : public Weapon {
 public:
     Bow();
+
+    Item* clone() const override;
 };
 
 

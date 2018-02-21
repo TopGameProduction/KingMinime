@@ -19,6 +19,10 @@ public:
     const int &getCharges() const;
 
     void use(Hero *hero) override;
+
+    Item* clone() const override ;
+
+    std::string toString() const override ;
 };
 
 
