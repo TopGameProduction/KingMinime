@@ -14,13 +14,6 @@ public:
 
     ~Bow();
 
-    Bow(const Bow & bow);
-
-    Bow(Bow &&bow) noexcept;
-
-    Bow &operator=(const Bow &bow);
-
-    Bow &operator=(Bow &&bow) noexcept;
     //Item* clone() const override;
 };
 

@@ -11,20 +11,4 @@ Axe::~Axe():~Weapon() {
 
 }
 
-Axe::Axe(const Axe &axe): Weapon(axe){
-
-}
-
-Axe::Axe(Axe &&axe) noexcept : Weapon(axe) {
-
-}
-
-Axe &Axe::operator=(const Axe &axe) {
-    Weapon::operator=(axe);
-}
-
-Axe &Axe::operator=(Axe &&axe) noexcept {
-    Weapon::operator=(axe);
-}
-
 //Item *Axe::clone() const {return new Axe(*this);}

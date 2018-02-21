@@ -97,4 +97,3 @@ std::string Inventory::toString() {
         }
     }
 }
-

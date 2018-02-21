@@ -15,15 +15,7 @@ private:
 public:
     Weapon(std::string name, int buyPrice, int dmg, int as, int dst);
 
-    Weapon(const Weapon & weapon);
-
     virtual ~Weapon();
-
-    Weapon (Weapon &&weapon) noexcept;
-
-    Weapon &operator=(const Weapon &weapon);
-
-    Weapon &operator=(Weapon &weapon) noexcept;
 
     //Getters & Setters
     virtual const int &getDmg() const;

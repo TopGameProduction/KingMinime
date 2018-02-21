@@ -12,12 +12,6 @@ Weapon::Weapon(std::string name, int buyPrice, int dmg, int as, int dst) : Item(
 
 Weapon::~Weapon():~Item() {}
 
-Weapon::Weapon(const Weapon &weapon):Item(weapon) {
-    this->dmg = (int) &weapon.getDmg();
-    this->as = (int) &weapon.getAs();
-    this->dst = (int) &weapon.getDst();
-}
-
 //Getters & Setters
 const int &Weapon::getDmg() const { return this->dmg; }
 
@@ -32,19 +26,6 @@ std::string Weapon::toString() const {
     "Attack Speed: " + std::to_string(as) + "\n" +
     "Distance: " + std::to_string(dst) + "\n";
 }
-
-Weapon::Weapon(Weapon &&weapon) noexcept : Item(weapon){
-
-}
-
-Weapon &Weapon::operator=(const Weapon &weapon) {
-    Item::operator=(weapon);
-}
-
-Weapon &Weapon::operator=(Weapon &weapon) noexcept{
-    Item::operator=(weapon);
-}
-
 
 
 

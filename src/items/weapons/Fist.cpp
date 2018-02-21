@@ -10,21 +10,6 @@ Fist::~Fist():~Weapon() {
 
 }
 
-Fist::Fist(const Fist &fist) : Weapon(fist) {
-
-}
-
-Fist::Fist(Fist &&fist) noexcept:Weapon(fist) {
-
-}
-
-Fist &Fist::operator=(const Fist &fist) {
-    Weapon::operator=(fist);
-}
-
-Fist &Fist::operator=(Fist &&fist) noexcept {
-    Weapon::operator=(fist);
-}
 
 
 

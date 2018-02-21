@@ -15,18 +15,6 @@ Item::~Item() {
     delete this->name;
 }
 
-Item::Item(const Item &item) {
-    this->name = new std::string(&item.getName());
-    this->buyPrice= (int) &item.getBuyPrice();
-    this->sellPrice= (int) &item.getSellPrice();
-}
-
-Item::Item(Item &&item) noexcept {
-  delete this->name;
-  this->name= item.name;
-  item.name= nullptr;
-}
-
 //Getters & Setters
 const std::string &Item::getName() const { return this->*name; }
 
@@ -42,18 +30,5 @@ std::string Item::toString() const {
            "Sell price: " + std::to_string(this->sellPrice) + "\n";
 }
 
-Item &Item::operator=(const Item &item) {
-    std::string * tmp_name=new std::string[item.getName()];
-    delete this->name;
-    this->name=tmp_name;
-    return *this;
-}
-
-Item &Item::operator=(Item &&item) noexcept{
-    delete name;
-    this->name=item.name;
-    item.name= nullptr;
-    return *this;
-}
 
 

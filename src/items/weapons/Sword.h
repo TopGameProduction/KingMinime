@@ -13,14 +13,6 @@ public:
 
     ~Sword();
 
-    Sword(const Sword &sword );
-
-    Sword(Sword && sword) noexcept;
-
-    Sword &operator=(const Sword &sword);
-
-    Sword &operator=(Sword &&sword) noexcept;
-
    // Sword* clone() const override;
 };
 

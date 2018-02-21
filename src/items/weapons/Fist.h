@@ -13,13 +13,6 @@ public:
 
     ~Fist();
 
-    Fist(const Fist &fist);
-
-    Fist(Fist &&fist) noexcept;
-
-    Fist &operator=(const Fist &fist);
-
-    Fist &operator=(Fist &&fist) noexcept ;
 
 
 

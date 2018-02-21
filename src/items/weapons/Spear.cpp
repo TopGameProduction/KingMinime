@@ -10,22 +10,5 @@ Spear::~Spear(): ~Weapon() {
 
 }
 
-Spear::Spear(const Spear &spear):Weapon(spear) {
-
-}
-
-Spear::Spear(Spear &&spear) noexcept:Weapon(spear) {
-
-}
-
-Spear &Spear::operator=(const Spear &spear) {
-    Weapon::operator=(spear);
-}
-
-Spear &Spear::operator=(Spear &&spear) noexcept{
-    Weapon::operator=(spear);
-}
-
-
 
 //Item *Spear::clone() const { new Spear(*this); }
