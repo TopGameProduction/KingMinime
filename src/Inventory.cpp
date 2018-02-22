@@ -82,7 +82,7 @@ void Inventory::removeItem(int index) {
     if (index < 0 || index >= this->itemsCnt) {
         throw ("Wrong slot");
     }
-    delete this->itemArr[index];
+    //delete this->itemArr[index];
     this->itemArr[index] = this->itemArr[this->itemsCnt - 1];
     this->itemArr[--this->itemsCnt] = nullptr;
 }
@@ -93,8 +93,9 @@ std::string Inventory::toString() {
     } else {
         std::string output = "INVENTORY\n";
         for (size_t i = 0; i < this->itemsCnt; ++i) {
-            output += ("Slot " + std::to_string(i) + ": " + this->itemArr[i]->toString() + "\n");
+            output += ("<---Slot " + std::to_string(i) + "--->\n" + this->itemArr[i]->toString() + "\n");
         }
+        return  output;
     }
 }
 

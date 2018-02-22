@@ -16,19 +16,21 @@ int main() {
     hero->use(p);
     std::cout << hero->toString();
     */
-    Inventory * inv = new Inventory(6);
+
+
+    Inventory *inv = new Inventory(6);
     Potion *p = new HpPotion("healing Salve", 100, 20, 3);
     Axe *axe = new Axe();
-    Armor* cuirass = new Cuirass();
-    Shield* buckler = new Buckler();
+    Armor *cuirass = new Cuirass();
+    Shield *buckler = new Buckler();
 
     inv->addItem(*p);
     inv->addItem(*axe);
     inv->addItem(*cuirass);
     inv->addItem(*buckler);
 
-    std::cout << axe->toString();
-    
+    inv->removeItem(2);
 
+    std::cout << inv->toString();
     return 0;
 }

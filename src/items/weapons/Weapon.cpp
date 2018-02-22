@@ -21,7 +21,7 @@ const int &Weapon::getDst() const { return this->dst; }
 
 //Functions
 std::string Weapon::toString() const {
-    Item::toString() +
+    return Item::toString() +
     "Damage: " + std::to_string(dmg) + "\n" +
     "Attack Speed: " + std::to_string(as) + "\n" +
     "Distance: " + std::to_string(dst) + "\n";
