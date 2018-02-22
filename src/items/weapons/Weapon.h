@@ -25,7 +25,7 @@ public:
     virtual const int &getDst() const;
 
     //Functions
-    virtual Item *clone() const = 0;
+    //virtual Item * clone() const = 0;
 
     std::string toString() const override;
 

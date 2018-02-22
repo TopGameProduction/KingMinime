@@ -6,4 +6,11 @@
 
 Fist::Fist() : Weapon("Fist", 50, 1, 1, 1) {}
 
-Item *Fist::clone() const { return new Fist(*this); }
+Fist::~Fist():~Weapon() {
+
+}
+
+
+
+
+//Item *Fist::clone() const { return new Fist(*this); }

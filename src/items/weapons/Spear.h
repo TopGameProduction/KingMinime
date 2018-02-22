@@ -12,7 +12,9 @@ class Spear : public Weapon {
 public:
     Spear();
 
-    Item* clone() const override;
+    ~Spear();
+
+    //Item* clone() const override;
 };
 
 

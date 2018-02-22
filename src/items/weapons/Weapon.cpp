@@ -10,7 +10,7 @@ Weapon::Weapon(std::string name, int buyPrice, int dmg, int as, int dst) : Item(
     this->dst = dst;
 }
 
-Weapon::~Weapon() {}
+Weapon::~Weapon():~Item() {}
 
 //Getters & Setters
 const int &Weapon::getDmg() const { return this->dmg; }
@@ -26,6 +26,8 @@ std::string Weapon::toString() const {
     "Attack Speed: " + std::to_string(as) + "\n" +
     "Distance: " + std::to_string(dst) + "\n";
 }
+
+
 
 
 

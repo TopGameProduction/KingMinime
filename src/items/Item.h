@@ -9,7 +9,7 @@
 
 class Item {
 private:
-    std::string name;
+    std::string *name;
     int buyPrice;
     int sellPrice;
 public:

@@ -7,4 +7,8 @@
 Axe::Axe() : Weapon("Axe",50,1,1,1){
 }
 
-Item *Axe::clone() const {return new Axe(*this);}
+Axe::~Axe():~Weapon() {
+
+}
+
+//Item *Axe::clone() const {return new Axe(*this);}
