@@ -3,6 +3,7 @@
 //
 
 #include "Hero.h"
+#include "items/weapons/Fist.h"
 
 Hero::Hero() : name("Marcus Rofler") {
     this->posX = 0;
@@ -17,11 +18,48 @@ Hero::Hero() : name("Marcus Rofler") {
     this->mp = 100;
     this->mpMax = 100;
     this->ms = 10;
-    this->weapon = nullptr;
-    this->inventory = nullptr;
+    this->weapon = new Fist();
+    this->inventory = new Inventory(6);
 }
 
-Hero::~Hero() = default;
+Hero::~Hero(){
+    delete this->weapon;
+    delete this->inventory;
+};
+
+Hero::Hero(const Hero &hero){
+     this->weapon=hero.weapon;
+     this->inventory=hero.inventory;
+}
+
+Hero::Hero(Hero &&hero) noexcept {
+     delete this->weapon;
+     delete this->inventory;
+     this->weapon=hero.weapon;
+     this->inventory=hero.inventory;
+     hero.weapon= nullptr;
+     hero.inventory= nullptr;
+}
+
+Hero &Hero::operator=(const Hero &hero) {
+    Weapon *tmp_weapon=hero.weapon;
+    Inventory *tmp_inventory=hero.inventory;
+    delete this->weapon;
+    delete this->inventory;
+    this->weapon=tmp_weapon;
+    this->inventory=tmp_inventory;
+    return *this;
+}
+
+Hero &Hero::operator=(Hero &&hero) noexcept {
+    delete this->weapon;
+    delete this->inventory;
+    this->weapon=hero.weapon;
+    this->inventory=hero.inventory;
+    hero.weapon= nullptr;
+    hero.inventory= nullptr;
+    return *this;
+}
 
 //Accessors
 
@@ -97,6 +135,9 @@ std::string Hero::toString() {
            this->inventory->toString() + "\n";
 
 }
+
+
+
 
 
 

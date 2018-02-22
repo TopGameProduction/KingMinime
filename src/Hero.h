@@ -33,6 +33,14 @@ public:
 
     ~Hero();
 
+    Hero(const Hero &hero);
+
+    Hero(Hero &&hero) noexcept ;
+
+    Hero &operator=(const Hero &hero);
+
+    Hero &operator=(Hero &&hero) noexcept ;
+
     //Getters & Setters
 
     const std::string &getName() const;
@@ -70,7 +78,6 @@ public:
     Inventory *getInventory() const;
 
     //Methods
-
 
     void addToInventory(Item &item);
 

@@ -13,7 +13,7 @@ private:
     int itemsCnt;
     Item **itemArr;
 public:
-    explicit Inventory(int capacity);
+    Inventory(int capacity);
 
     Inventory(const Inventory &other);
 
