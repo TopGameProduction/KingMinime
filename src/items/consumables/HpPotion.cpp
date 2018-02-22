@@ -9,6 +9,8 @@ HpPotion::HpPotion(std::string name, int buyPrice, int grantedHp, int charges) :
     this->charges = charges;
 }
 
+HpPotion::~HpPotion() = default;
+
 const int &HpPotion::getGrantedHp() const { return this->grantedHpPerCharge; }
 
 const int &HpPotion::getCharges() const { return this->charges; }
@@ -28,5 +30,6 @@ std::string HpPotion::toString() const {
            "Charges: " + std::to_string(this->charges) + "\n" +
            "Health heal per charge: " + std::to_string(this->grantedHpPerCharge) + "\n";
 }
+
 
 

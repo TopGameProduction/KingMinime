@@ -21,7 +21,7 @@ Hero::Hero() : name("Marcus Rofler") {
     this->inventory = nullptr;
 }
 
-Hero::~Hero() {}
+Hero::~Hero() = default;
 
 //Accessors
 
@@ -76,6 +76,14 @@ Inventory *Hero::getInventory() const { return this->inventory; }
 
 void Hero::use(Potion *potion) { potion->use(this); }
 
+void Hero::addToInventory(Item &item) {
+    this->inventory->addItem(item);
+}
+
+void Hero::removeFromInventory(int index) {
+    this->inventory->removeItem(index);
+}
+
 
 std::string Hero::toString() {
     return "Name: " + this->name + "\n" +
@@ -85,9 +93,14 @@ std::string Hero::toString() {
            "Experience: " + std::to_string(this->xp) + "/" + std::to_string(this->xpNext) + "\n" +
            "Health Points: " + std::to_string(this->hp) + "/" + std::to_string(this->hpMax) + "\n" +
            "Mana Points: " + std::to_string(this->mp) + "/" + std::to_string(this->mpMax) + "\n" +
-           "Movement Speed: " + std::to_string(this->ms);
+           "Movement Speed: " + std::to_string(this->ms) + "\n" +
+           this->inventory->toString() + "\n";
 
 }
+
+
+
+
 
 
 

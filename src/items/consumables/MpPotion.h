@@ -14,6 +14,8 @@ private:
 public:
     MpPotion(std::string name, int buyPrice, int grantedMp, int charges);
 
+    ~MpPotion() override ;
+
     const int &getGrantedHp() const;
 
     const int &getCharges() const;

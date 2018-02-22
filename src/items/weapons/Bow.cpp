@@ -6,10 +6,6 @@
 
 Bow::Bow() : Weapon("Bow", 50, 1, 1, 1) {}
 
-Bow::~Bow() :~Weapon() {
+Bow::~Bow() = default;
 
-}
-
-
-
-//Item *Bow::clone() const { return new Bow(*this); }
+Item *Bow::clone() const { return new Bow(*this); }

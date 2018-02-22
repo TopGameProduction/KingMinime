@@ -6,9 +6,6 @@
 
 Spear::Spear() : Weapon("Spear", 50, 1, 1, 1) {}
 
-Spear::~Spear(): ~Weapon() {
+Spear::~Spear() = default;
 
-}
-
-
-//Item *Spear::clone() const { new Spear(*this); }
+Item *Spear::clone() const { new Spear(*this); }

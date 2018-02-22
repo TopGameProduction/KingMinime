@@ -8,7 +8,7 @@ Armor::Armor(const std::string &name, int buyPrice, int armPoint) : Item(name, b
     this->armPoint = armPoint;
 }
 
-Armor::~Armor() {}
+Armor::~Armor() = default;
 
 // Getters & Setters
 const int &Armor::getArmPoint() { return this->armPoint; }

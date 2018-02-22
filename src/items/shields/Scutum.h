@@ -8,11 +8,13 @@
 
 #include "Shield.h"
 
-class Scutum : public Shield{
+class Scutum : public Shield {
 public:
     Scutum();
 
-    Item * clone() const override;
+    ~Scutum() override;
+
+    Item *clone() const override;
 };
 
 

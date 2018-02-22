@@ -14,6 +14,8 @@ private:
 public:
     HpPotion(std::string name, int buyPrice, int grantedHp, int charges);
 
+    ~HpPotion() override ;
+
     const int &getGrantedHp() const;
 
     const int &getCharges() const;

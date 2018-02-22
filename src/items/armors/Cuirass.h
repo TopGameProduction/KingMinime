@@ -12,6 +12,8 @@ class Cuirass : public Armor{
 public:
     Cuirass();
 
+    ~Cuirass() override;
+
     Item* clone() const override;
 };
 

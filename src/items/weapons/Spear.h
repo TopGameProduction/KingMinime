@@ -5,16 +5,15 @@
 #ifndef KINGMINIME_SPEAR_H
 #define KINGMINIME_SPEAR_H
 
-
 #include "Weapon.h"
 
 class Spear : public Weapon {
 public:
     Spear();
 
-    ~Spear();
+    ~Spear() override ;
 
-    //Item* clone() const override;
+    Item* clone() const override;
 };
 
 

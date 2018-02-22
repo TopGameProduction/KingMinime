@@ -12,9 +12,9 @@ class Axe : public Weapon {
 public:
     Axe();
 
-    ~Axe();
+    ~Axe() override;
 
-   //Item* clone() const override;
+   Item* clone() const override;
 };
 
 

@@ -4,8 +4,10 @@
 
 #include "Buckler.h"
 
-Buckler::Buckler() : Shield("Buckler",1,1){
+Buckler::Buckler() : Shield("Buckler", 1, 1) {}
 
-}
+Buckler::~Buckler() = default;
 
-Item *Buckler::clone() const {return new Buckler(*this);}
+Item *Buckler::clone() const { return new Buckler(*this); }
+
+

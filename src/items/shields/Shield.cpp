@@ -8,15 +8,13 @@ Shield::Shield(const std::string &name, int buyPrice, int blockChance) : Item(na
     this->blockChance = blockChance;
 }
 
-Shield::~Shield() {
+Shield::~Shield() = default;
 
-}
+//Getters & Setters
+const int &Shield::getBlockChance() { return this->blockChance; }
 
-const int &Shield::getBlockChance() {
-    return this->blockChance;
-}
-
-std::string Shield::toString() {
+//Functions
+std::string Shield::toString() const {
     return Item::toString() +
            "Block chance: " + std::to_string(this->blockChance) + "\n";
 }

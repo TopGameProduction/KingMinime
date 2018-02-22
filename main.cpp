@@ -11,18 +11,19 @@
 int main() {
     /*
     Hero *hero = new Hero;
-    Potion *p = new HpPotion("healing Salve", 100, 20, 3);
+    Potion *p = new HpPotion("Healing Salve", 100, 20, 3);
     hero->setHp(50);
     hero->use(p);
-    std::cout << hero->toString();
-    */
+     */
+
 
 
     Inventory *inv = new Inventory(6);
-    Potion *p = new HpPotion("healing Salve", 100, 20, 3);
+    Potion *p = new HpPotion("Healing Salve", 100, 20, 3);
     Axe *axe = new Axe();
     Armor *cuirass = new Cuirass();
     Shield *buckler = new Buckler();
+
 
     inv->addItem(*p);
     inv->addItem(*axe);
@@ -32,5 +33,6 @@ int main() {
     inv->removeItem(2);
 
     std::cout << inv->toString();
+
     return 0;
 }

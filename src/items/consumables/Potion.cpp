@@ -6,4 +6,6 @@
 
 Potion::Potion(std::string name, int buyPrice) : Item(name, buyPrice) {}
 
+Potion::~Potion() = default;
+
 

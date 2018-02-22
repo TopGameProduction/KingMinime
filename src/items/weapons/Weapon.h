@@ -15,7 +15,7 @@ private:
 public:
     Weapon(std::string name, int buyPrice, int dmg, int as, int dst);
 
-    virtual ~Weapon();
+    ~Weapon() override;
 
     //Getters & Setters
     virtual const int &getDmg() const;
@@ -25,7 +25,7 @@ public:
     virtual const int &getDst() const;
 
     //Functions
-    //virtual Item * clone() const = 0;
+    Item *clone() const override = 0;
 
     std::string toString() const override;
 

@@ -4,8 +4,8 @@
 
 #include "Scutum.h"
 
-Scutum::Scutum() : Shield("Scutum", 1, 1){
+Scutum::Scutum() : Shield("Scutum", 1, 1) {}
 
-}
+Scutum::~Scutum() = default;
 
-Item *Scutum::clone() const {return new Scutum(*this);}
+Item *Scutum::clone() const { return new Scutum(*this); }

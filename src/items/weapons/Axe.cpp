@@ -4,11 +4,8 @@
 
 #include "Axe.h"
 
-Axe::Axe() : Weapon("Axe",50,1,1,1){
-}
+Axe::Axe() : Weapon("Axe",50,1,1,1){}
 
-Axe::~Axe():~Weapon() {
+Axe::~Axe() = default;
 
-}
-
-//Item *Axe::clone() const {return new Axe(*this);}
+Item *Axe::clone() const {return new Axe(*this);}

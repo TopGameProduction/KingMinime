@@ -12,6 +12,8 @@ class Rondache : public Shield{
 public:
     Rondache();
 
+    ~Rondache() override;
+
     Item * clone() const override;
 };
 

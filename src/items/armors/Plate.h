@@ -8,11 +8,13 @@
 
 #include "Armor.h"
 
-class Plate : public Armor{
+class Plate : public Armor {
 public:
     Plate();
 
-    Item* clone() const override;
+    ~Plate() override;
+
+    Item *clone() const override;
 };
 
 

@@ -6,4 +6,6 @@
 
 Plate::Plate() : Armor("Plate", 1, 1) {}
 
+Plate::~Plate() = default;
+
 Item *Plate::clone() const { return new Plate(*this); }

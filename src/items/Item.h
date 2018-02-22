@@ -9,7 +9,7 @@
 
 class Item {
 private:
-    std::string *name;
+    std::string name;
     int buyPrice;
     int sellPrice;
 public:
@@ -25,7 +25,7 @@ public:
     virtual const int &getSellPrice() const;
 
     //Functions
-    virtual Item* clone() const = 0;
+    virtual Item *clone() const = 0;
 
     virtual std::string toString() const;
 

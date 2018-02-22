@@ -8,18 +8,21 @@
 
 #include "../Item.h"
 
-class Shield : public Item{
+class Shield : public Item {
 private:
     int blockChance;
 public:
     Shield(const std::string &name, int buyPrice, int blockChance);
-    virtual ~Shield();
 
+    ~Shield() override;
+
+    //Getters & Setters
     const int &getBlockChance();
 
-    virtual Item* clone() const = 0;
+    //Functions
+    Item *clone() const override = 0;
 
-    virtual std::string toString();
+    std::string toString() const override;
 };
 
 

@@ -9,6 +9,8 @@ MpPotion::MpPotion(std::string name, int buyPrice, int grantedMp, int charges) :
     this->charges = charges;
 }
 
+MpPotion::~MpPotion() = default;
+
 const int &MpPotion::getGrantedHp() const { return this->grantedMpPerCharge; }
 
 const int &MpPotion::getCharges() const { return this->charges; }
@@ -28,3 +30,4 @@ std::string MpPotion::toString() const {
            "Charges: " + std::to_string(this->charges) + "\n" +
            "Mana heal per charge: " + std::to_string(this->grantedMpPerCharge) + "\n";
 }
+

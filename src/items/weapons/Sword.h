@@ -11,9 +11,9 @@ class Sword : public Weapon{
 public:
     Sword();
 
-    ~Sword();
+    ~Sword() override ;
 
-   // Sword* clone() const override;
+    Item * clone() const override;
 };
 
 

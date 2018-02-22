@@ -12,6 +12,8 @@ class Clipeum : public Shield {
 public:
     Clipeum();
 
+    ~Clipeum() override ;
+
     Item *clone() const override;
 };
 

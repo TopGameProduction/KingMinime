@@ -6,5 +6,7 @@
 
 Clipeum::Clipeum() : Shield("Clipeum", 1, 1) {}
 
+Clipeum::~Clipeum() = default;
+
 Item *Clipeum::clone() const { return new Clipeum(*this); }
 

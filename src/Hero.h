@@ -53,13 +53,13 @@ public:
 
     const int &getHp() const;
 
-    void setHp(const int& newHp );
+    void setHp(const int &newHp);
 
     const int &getHpMax() const;
 
     const int &getMp() const;
 
-    void setMp(const int& newMp);
+    void setMp(const int &newMp);
 
     const int &getMpMax() const;
 
@@ -71,11 +71,12 @@ public:
 
     //Methods
 
+
+    void addToInventory(Item &item);
+
+    void removeFromInventory(int index);
+
     /*
-    void addToInventory(Item * item);
-
-    void removeFromInventory(int slot);
-
     void pick (Weapon * weapon);
 
     void pick (int slot);
@@ -83,7 +84,7 @@ public:
     void drop (Weapon * weapon);
      */
 
-    void use (Potion *  potion);
+    void use(Potion *potion);
 
     std::string toString();
 
