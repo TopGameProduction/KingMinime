@@ -22,7 +22,6 @@ int main() {
     Armor *cuirass = new Cuirass();
     Shield *buckler = new Buckler();
 
-
     inv->addItem(*p);
     inv->addItem(*axe);
     inv->addItem(*cuirass);
@@ -30,7 +29,8 @@ int main() {
 
     inv->removeItem(2);
 
-    std::cout << inv[1].toString();
+    std::cout << inv[2].toString();
+
 
     return 0;
 }
