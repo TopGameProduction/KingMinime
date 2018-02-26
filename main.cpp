@@ -16,8 +16,6 @@ int main() {
     hero->use(p);
      */
 
-
-
     Inventory *inv = new Inventory(6);
     Potion *p = new HpPotion("Healing Salve", 100, 20, 3);
     Axe *axe = new Axe();

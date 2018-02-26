@@ -22,42 +22,23 @@ Hero::Hero() : name("Marcus Rofler") {
     this->inventory = new Inventory(6);
 }
 
-Hero::~Hero(){
+Hero::~Hero() {
     delete this->weapon;
     delete this->inventory;
 };
 
-Hero::Hero(const Hero &hero){
-     this->weapon=hero.weapon;
-     this->inventory=hero.inventory;
-}
-
-Hero::Hero(Hero &&hero) noexcept {
-     delete this->weapon;
-     delete this->inventory;
-     this->weapon=hero.weapon;
-     this->inventory=hero.inventory;
-     hero.weapon= nullptr;
-     hero.inventory= nullptr;
+Hero::Hero(const Hero &hero) {
+    this->weapon = hero.weapon;
+    this->inventory = hero.inventory;
 }
 
 Hero &Hero::operator=(const Hero &hero) {
-    Weapon *tmp_weapon=hero.weapon;
-    Inventory *tmp_inventory=hero.inventory;
+    Weapon *tmp_weapon = hero.weapon;
+    Inventory *tmp_inventory = hero.inventory;
     delete this->weapon;
     delete this->inventory;
-    this->weapon=tmp_weapon;
-    this->inventory=tmp_inventory;
-    return *this;
-}
-
-Hero &Hero::operator=(Hero &&hero) noexcept {
-    delete this->weapon;
-    delete this->inventory;
-    this->weapon=hero.weapon;
-    this->inventory=hero.inventory;
-    hero.weapon= nullptr;
-    hero.inventory= nullptr;
+    this->weapon = tmp_weapon;
+    this->inventory = tmp_inventory;
     return *this;
 }
 
@@ -101,7 +82,6 @@ void Hero::setMp(const int &newMp) {
     }
 }
 
-
 const int &Hero::getMpMax() const { return this->mpMax; }
 
 const int &Hero::getMs() const { return this->ms; }
@@ -114,14 +94,20 @@ Inventory *Hero::getInventory() const { return this->inventory; }
 
 void Hero::use(Potion *potion) { potion->use(this); }
 
-void Hero::addToInventory(Item &item) {
-    this->inventory->addItem(item);
-}
+void Hero::pick(Item &item) { this->inventory->addItem(item); }
 
-void Hero::removeFromInventory(int index) {
-    this->inventory->removeItem(index);
-}
+void Hero::drop(int index) { this->inventory->removeItem(index); }
 
+void Hero::interact(int index) {
+
+    Weapon* pw = dynamic_cast<Weapon*>(this->inventory[index]);
+    if(pw){
+        this->weapon = inventory[index];
+    }
+    Potion* pp = dynamic_cast<Potion*>(&this->inventory[index]);
+     
+}
+void Hero::attack(Enemy *enemy) {}
 
 std::string Hero::toString() {
     return "Name: " + this->name + "\n" +
@@ -133,8 +119,10 @@ std::string Hero::toString() {
            "Mana Points: " + std::to_string(this->mp) + "/" + std::to_string(this->mpMax) + "\n" +
            "Movement Speed: " + std::to_string(this->ms) + "\n" +
            this->inventory->toString() + "\n";
-
 }
+
+
+
 
 
 

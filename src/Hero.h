@@ -8,6 +8,7 @@
 #include "items/weapons/Weapon.h"
 #include "items/consumables/Potion.h"
 #include "Inventory.h"
+#include "enemies/Enemy.h"
 
 class Potion;
 
@@ -35,11 +36,7 @@ public:
 
     Hero(const Hero &hero);
 
-    Hero(Hero &&hero) noexcept ;
-
     Hero &operator=(const Hero &hero);
-
-    Hero &operator=(Hero &&hero) noexcept ;
 
     //Getters & Setters
 
@@ -79,19 +76,15 @@ public:
 
     //Methods
 
-    void addToInventory(Item &item);
+    void pick(Item &item);
 
-    void removeFromInventory(int index);
+    void drop(int index);
 
-    /*
-    void pick (Weapon * weapon);
-
-    void pick (int slot);
-
-    void drop (Weapon * weapon);
-     */
+    void interact(int index);
 
     void use(Potion *potion);
+
+    void attack (Enemy * enemy);
 
     std::string toString();
 

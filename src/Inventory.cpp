@@ -38,9 +38,9 @@ const int &Inventory::getCapacity() const { return this->capacity; }
 const int &Inventory::getItemsCount() const { return this->itemsCnt; }
 
 //Operators
-Item &Inventory::operator[](int index) {
+Item *Inventory::operator[](int index) {
     if (index >= 0 && index < itemsCnt) {
-        return *this->itemArr[index];
+        return this->itemArr[index];
     } else {
         if (index >= itemsCnt && index < capacity) {
             throw ("Slot is empty");
@@ -70,11 +70,11 @@ Inventory &Inventory::operator=(const Inventory &other) {
 }
 
 //Functions
-void Inventory::addItem(Item &item) {
+void Inventory::addItem(const Item &item) {
     if (this->itemsCnt >= this->capacity) {
         throw "No empty slots";
     } else {
-        this->itemArr[this->itemsCnt++] = &item;
+        this->itemArr[this->itemsCnt++] = item.clone();
     }
 }
 

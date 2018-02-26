@@ -25,13 +25,13 @@ public:
     const int &getItemsCount() const;
 
     //Operators
-    Item &operator[](int index);
+    Item *operator[](int index);
 
     Inventory &operator=(const Inventory &other);
 
     //Functions
 
-    void addItem(Item &item);
+    void addItem(const Item &item);
 
     void removeItem(int index);
 
