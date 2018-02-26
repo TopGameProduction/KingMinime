@@ -99,13 +99,13 @@ void Hero::pick(Item &item) { this->inventory->addItem(item); }
 void Hero::drop(int index) { this->inventory->removeItem(index); }
 
 void Hero::interact(int index) {
-
+    /*
     Weapon* pw = dynamic_cast<Weapon*>(this->inventory[index]);
     if(pw){
         this->weapon = inventory[index];
     }
     Potion* pp = dynamic_cast<Potion*>(&this->inventory[index]);
-     
+     */
 }
 void Hero::attack(Enemy *enemy) {}
 

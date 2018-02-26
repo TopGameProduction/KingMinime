@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.8)
 project(KingMinime)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(KingMinime main.cpp src/Hero.cpp src/Hero.h src/weapons/Weapon.cpp src/weapons/Weapon.h src/Inventory.cpp src/Inventory.h src/weapons/Sword.cpp src/weapons/Sword.h src/weapons/Axe.cpp src/weapons/Axe.h src/weapons/Bow.cpp src/weapons/Bow.h src/item/Item.cpp src/item/Item.h)
+add_executable(KingMinime main.cpp src/Hero.cpp src/Hero.h src/Inventory.cpp src/Inventory.h src/items/Item.cpp src/items/Item.h src/items/weapons/Weapon.cpp src/items/weapons/Weapon.h src/items/weapons/Axe.cpp src/items/weapons/Axe.h src/items/weapons/Bow.cpp src/items/weapons/Bow.h src/items/weapons/Fist.cpp src/items/weapons/Fist.h src/items/weapons/Spear.cpp src/items/weapons/Spear.h src/items/weapons/Sword.cpp src/items/weapons/Sword.h src/items/consumables/Potion.cpp src/items/consumables/Potion.h src/items/consumables/HpPotion.cpp src/items/consumables/HpPotion.h src/items/consumables/MpPotion.cpp src/items/consumables/MpPotion.h src/items/armors/Armor.cpp src/items/armors/Armor.h src/items/armors/Cuirass.cpp src/items/armors/Cuirass.h src/items/armors/Plate.cpp src/items/armors/Plate.h src/items/shields/Shield.cpp src/items/shields/Shield.h src/items/shields/Buckler.cpp src/items/shields/Buckler.h src/items/shields/Clipeum.cpp src/items/shields/Clipeum.h src/items/shields/Rondache.cpp src/items/shields/Rondache.h src/items/shields/Scutum.cpp src/items/shields/Scutum.h src/enemies/Enemy.cpp src/enemies/Enemy.h)

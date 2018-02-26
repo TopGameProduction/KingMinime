@@ -30,7 +30,7 @@ int main() {
 
     inv->removeItem(2);
 
-    std::cout << inv->toString();
+    std::cout << inv[1].toString();
 
     return 0;
 }

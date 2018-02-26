@@ -11,6 +11,7 @@
 #include "enemies/Enemy.h"
 
 class Potion;
+class Enemy;
 
 class Hero {
 private:
