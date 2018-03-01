@@ -99,14 +99,17 @@ void Hero::pick(Item &item) { this->inventory->addItem(item); }
 void Hero::drop(int index) { this->inventory->removeItem(index); }
 
 void Hero::interact(int index) {
-    /*
-    Weapon* pw = dynamic_cast<Weapon*>(this->inventory[index]);
-    if(pw){
-        this->weapon = inventory[index];
+
+    Weapon *pw = dynamic_cast<Weapon *>((*this->inventory)[index]);
+    if (pw) {
+        this->weapon = pw;
     }
-    Potion* pp = dynamic_cast<Potion*>(&this->inventory[index]);
-     */
+    Potion *pp = dynamic_cast<Potion *>((*this->inventory)[index]);
+    if (pp) {
+        pp->use(this);
+    }
 }
+
 void Hero::attack(Enemy *enemy) {}
 
 std::string Hero::toString() {

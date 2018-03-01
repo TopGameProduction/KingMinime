@@ -7,6 +7,8 @@
 #include "src/items/shields/Shield.h"
 #include "src/items/shields/Buckler.h"
 
+#include <typeinfo>
+
 
 int main() {
     /*
@@ -16,21 +18,25 @@ int main() {
     hero->use(p);
      */
 
-    Inventory *inv = new Inventory(6);
+    Hero *hero = new Hero;
+    hero->setHp(50);
     Potion *p = new HpPotion("Healing Salve", 100, 20, 3);
     Axe *axe = new Axe();
     Armor *cuirass = new Cuirass();
     Shield *buckler = new Buckler();
 
-    inv->addItem(*p);
-    inv->addItem(*axe);
-    inv->addItem(*cuirass);
-    inv->addItem(*buckler);
+    hero->pick(*p);
+    hero->pick(*axe);
+    hero->pick(*cuirass);
+    hero->pick(*buckler);
 
-    inv->removeItem(2);
+    hero->drop(2);
 
-    std::cout << inv[2].toString();
+    std::cout << p->toString() << std::endl;
 
+    hero->interact(0);
+
+    std::cout << hero->toString() << std::endl;
 
     return 0;
 }

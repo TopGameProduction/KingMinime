@@ -9,8 +9,11 @@
 #include "items/consumables/Potion.h"
 #include "Inventory.h"
 #include "enemies/Enemy.h"
+#include "items/armors/Armor.h"
+#include "items/shields/Shield.h"
 
 class Potion;
+
 class Enemy;
 
 class Hero {
@@ -29,6 +32,8 @@ private:
     int mpMax;
     int ms;
     Weapon *weapon;
+    Armor *armor;
+    Shield *shield;
     Inventory *inventory;
 public:
     Hero();
@@ -85,7 +90,7 @@ public:
 
     void use(Potion *potion);
 
-    void attack (Enemy * enemy);
+    void attack(Enemy *enemy);
 
     std::string toString();
 
