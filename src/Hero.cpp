@@ -2,28 +2,19 @@
 // Created by PC on 17.02.2018.
 //
 
+#include <iostream>
 #include "Hero.h"
 #include "items/weapons/Fist.h"
 
-Hero::Hero() : name("Marcus Rofler") {
-    this->posX = 0;
-    this->posY = 0;
-    this->lvl = 1;
-    this->maxLvl = 25;
-    this->gold = 100;
-    this->xp = 0;
-    this->xpNext = 100;
-    this->hp = 100;
-    this->hpMax = 100;
-    this->mp = 100;
-    this->mpMax = 100;
-    this->ms = 10;
-    this->weapon = new Fist();
-    this->inventory = new Inventory(6);
+Hero::Hero() : name("Marcus Rofler"), posX(0), posY(0), lvl(1), maxLvl(25), gold(100), xp(0), xpNext(100), hp(100),
+               hpMax(100), mp(100), mpMax(100), ms(10), weapon(new Fist()), armor(nullptr), shield(nullptr),
+               inventory(new Inventory(6)) {
 }
 
 Hero::~Hero() {
     delete this->weapon;
+    delete this->armor;
+    delete this->shield;
     delete this->inventory;
 };
 
@@ -92,8 +83,6 @@ Inventory *Hero::getInventory() const { return this->inventory; }
 
 //Methods
 
-void Hero::use(Potion *potion) { potion->use(this); }
-
 void Hero::pick(Item &item) { this->inventory->addItem(item); }
 
 void Hero::drop(int index) { this->inventory->removeItem(index); }
@@ -102,40 +91,61 @@ void Hero::interact(int index) {
 
     Weapon *pw = dynamic_cast<Weapon *>((*this->inventory)[index]);
     if (pw) {
-        this->weapon = pw;
+        char answer;
+        std::cout << "Do you want to use weapon in " << index << " slot" << std::endl;
+        std::cin >> answer;
+        if (answer == 'Y') {
+            this->weapon = dynamic_cast<Weapon *>(pw->clone());
+            this->inventory->removeItem(index);
+        } else return;
+    }
+    Armor *pa = dynamic_cast<Armor *>((*this->inventory)[index]);
+    if (pw) {
+        char answer;
+        std::cout << "Do you want to use weapon in " << index << " slot" << std::endl;
+        std::cin >> answer;
+        if (answer == 'Y') {
+            this->armor = dynamic_cast<Armor*>(pa->clone());
+            this->inventory->removeItem(index);
+        } else return;
+    }
+    Weapon *p = dynamic_cast<Weapon *>((*this->inventory)[index]);
+    if (pw) {
+        char answer;
+        std::cout << "Do you want to use weapon in " << index << " slot" << std::endl;
+        std::cin >> answer;
+        if (answer == 'Y') {
+            this->weapon = dynamic_cast<Weapon *>(pw->clone());
+            this->inventory->removeItem(index);
+        } else return;
     }
     Potion *pp = dynamic_cast<Potion *>((*this->inventory)[index]);
     if (pp) {
-        pp->use(this);
+        char answer;
+        std::cout << "Do you want to use potion in " << index << " slot?" << std::endl;
+        std::cin >> answer;
+        if (answer == 'Y') {
+            pp->use(this);
+        } else return;
     }
 }
 
 void Hero::attack(Enemy *enemy) {}
 
 std::string Hero::toString() {
-    return "Name: " + this->name + "\n" +
-           "Position: " + std::to_string(this->posX) + " " + std::to_string(this->posY) + "\n" +
-           "Gold: " + std::to_string(gold) + "\n" +
-           "Level: " + std::to_string(this->lvl) + "/" + std::to_string(this->maxLvl) + "\n" +
-           "Experience: " + std::to_string(this->xp) + "/" + std::to_string(this->xpNext) + "\n" +
-           "Health Points: " + std::to_string(this->hp) + "/" + std::to_string(this->hpMax) + "\n" +
-           "Mana Points: " + std::to_string(this->mp) + "/" + std::to_string(this->mpMax) + "\n" +
-           "Movement Speed: " + std::to_string(this->ms) + "\n" +
-           this->inventory->toString() + "\n";
+    std::string output = "\n\n<<<<<<<<<<HERO INFO>>>>>>>>>>>\n\n";
+    output +=
+            "Name: " + this->name + "\n" +
+            "Position: " + std::to_string(this->posX) + " " + std::to_string(this->posY) + "\n" +
+            "Gold: " + std::to_string(gold) + "\n" +
+            "Level: " + std::to_string(this->lvl) + "/" + std::to_string(this->maxLvl) + "\n" +
+            "Experience: " + std::to_string(this->xp) + "/" + std::to_string(this->xpNext) + "\n" +
+            "Health Points: " + std::to_string(this->hp) + "/" + std::to_string(this->hpMax) + "\n" +
+            "Mana Points: " + std::to_string(this->mp) + "/" + std::to_string(this->mpMax) + "\n" +
+            "Movement Speed: " + std::to_string(this->ms) + "\n" +
+            "My Weapon: " + (weapon == nullptr ? "No weapon" : weapon->getName()) + "\n" +
+            "My Shield: " + (shield == nullptr ? "No shield" : shield->getName()) + "\n" +
+            "My Armor: " + (armor == nullptr ? "No armor" : armor->getName()) + "\n" +
+            this->inventory->toString() + "\n";
+    return output;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

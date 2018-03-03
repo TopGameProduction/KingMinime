@@ -88,8 +88,6 @@ public:
 
     void interact(int index);
 
-    void use(Potion *potion);
-
     void attack(Enemy *enemy);
 
     std::string toString();
