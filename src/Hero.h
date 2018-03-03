@@ -80,7 +80,7 @@ public:
 
     Inventory *getInventory() const;
 
-    //Methods
+    //Functions
 
     void pick(Item &item);
 
@@ -88,7 +88,9 @@ public:
 
     void interact(int index);
 
-    void attack(Enemy *enemy);
+    void attack(Enemy &enemy);
+
+    bool isAlive();
 
     std::string toString();
 

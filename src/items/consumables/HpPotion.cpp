@@ -15,10 +15,9 @@ const int &HpPotion::getGrantedHp() const { return this->grantedHpPerCharge; }
 
 const int &HpPotion::getCharges() const { return this->charges; }
 
-void HpPotion::use(Hero *hero) {
+void HpPotion::use(Hero &hero) {
     if (charges > 0) {
-        int newHp = hero->getHp() + this->grantedHpPerCharge;
-        hero->setHp(newHp);
+        hero.setHp(hero.getHp() + grantedHpPerCharge);
         charges--;
     }
 }

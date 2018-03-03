@@ -15,10 +15,10 @@ const int &MpPotion::getGrantedHp() const { return this->grantedMpPerCharge; }
 
 const int &MpPotion::getCharges() const { return this->charges; }
 
-void MpPotion::use(Hero *hero) {
+void MpPotion::use(Hero &hero) {
     if (charges > 0) {
-        int newMp = hero->getMp() + this->grantedMpPerCharge;
-        hero->setHp(newMp);
+        int newMp = hero.getMp() + this->grantedMpPerCharge;
+        hero.setHp(newMp);
         charges--;
     }
 }

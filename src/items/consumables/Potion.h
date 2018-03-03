@@ -16,7 +16,7 @@ public:
 
     ~Potion() override;
 
-    virtual void use(Hero *hero) = 0;
+    virtual void use(Hero &hero) = 0;
 
     Item *clone() const override = 0;
 

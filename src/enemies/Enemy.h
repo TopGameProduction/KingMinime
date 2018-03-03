@@ -14,6 +14,7 @@ class Enemy {
 private:
     std::string name;
     int hp;
+    int hpMax;
     int dmg;
 public:
     Enemy(std::string name, int hp, int dmg);
@@ -25,6 +26,10 @@ public:
     const std::string &getName() const;
 
     const int &getHp() const;
+
+    void setHp(const int & newHp);
+
+    const int &getHpMax() const;
 
     const int &getDamage() const;
 
